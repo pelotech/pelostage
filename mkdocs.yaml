@@ -1,0 +1,8 @@
+site_name: pelostage
+site_description: documentation for the pelotech backstage deployment
+nav:
+  - Home: README.md
+
+plugins:
+  - techdocs-core
+  - monorepo
