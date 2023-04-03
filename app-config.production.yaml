@@ -15,6 +15,14 @@ backend:
     # backend will bind on the interface that corresponds to the backend.baseUrl
     # hostname.
     host: 0.0.0.0
+auth:
+  # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: development
+  providers:
+    github:
+      development:
+        callbackUrl: https://pelostage.non-prod.pelo.tech/api/auth/github/handler/frame
+
 
 #  # config options: https://node-postgres.com/api/client
 #  database:
