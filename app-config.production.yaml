@@ -4,11 +4,11 @@ backend:
   # reachable not just from within the backend host, but from all of your
   # callers. When its value is "http://localhost:7007", it's strictly private
   # and can't be reached by others.
-  baseUrl: https://pelostage.pelo.tech
+  baseUrl: https://pelostage.non-prod.pelo.tech
   listen:
     port: 7007
     cors:
-      origin: https://pelostage.pelo.tech
+      origin: https://pelostage.non-prod.pelo.tech
     # The following host directive binds to all IPv4 interfaces when its value
     # is "0.0.0.0". This is the most permissive setting. The right value depends
     # on your specific deployment. If you remove the host line entirely, the

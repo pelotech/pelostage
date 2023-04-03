@@ -1,6 +1,6 @@
 app:
   title: Pelotech backstage
-  baseUrl: https://pelostage.pelo.tech
+  baseUrl: https://pelostage.non-prod.pelo.tech
 
 organization:
   name: PeloTech
