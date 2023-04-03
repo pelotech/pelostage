@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - name:
+      - name: yarn
         run: yarn install --frozen-lockfile && yarn tsc && yarn build
         shell: bash
       - name: Log in to the Container registry
