@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: pelostage.pelo.tech
+    - host: pelostage.non-prod.pelo.tech
       http:
         paths:
           - backend:
@@ -21,7 +21,7 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - pelostage.pelo.tech
+        - pelostage.non-prod.pelo.tech
       secretName: pelostage-secret
 
 ---
