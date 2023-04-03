@@ -11,4 +11,8 @@ resources:
 generators:
   - generators/secrets-generator.yaml
 
+images:
+  - name: ghcr.io/pelotech/pelostage
+    newTag: latest
+
 namespace: backstage
