@@ -1,3 +1,7 @@
+app:
+  title: Pelotech backstage
+  baseUrl: https://pelostage.pelo.tech
+
 backend:
   # Note that the baseUrl should be the URL that the browser and other clients
   # should use when communicating with the backend, i.e. it needs to be
@@ -8,7 +12,7 @@ backend:
   listen:
     port: 7007
     cors:
-      origin: "*"
+      origin: https://pelostage.pelo.tech
     # The following host directive binds to all IPv4 interfaces when its value
     # is "0.0.0.0". This is the most permissive setting. The right value depends
     # on your specific deployment. If you remove the host line entirely, the
@@ -17,7 +21,6 @@ backend:
     host: 0.0.0.0
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  experimentalExtraAllowedOrigins: ["*"]
   environment: production
   providers:
     github:
