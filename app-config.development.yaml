@@ -8,7 +8,7 @@ backend:
   listen:
     port: 7007
     cors:
-      origin: https://pelostage.non-prod.pelo.tech
+      origin: *
     # The following host directive binds to all IPv4 interfaces when its value
     # is "0.0.0.0". This is the most permissive setting. The right value depends
     # on your specific deployment. If you remove the host line entirely, the
