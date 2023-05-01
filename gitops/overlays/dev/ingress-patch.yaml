@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: pelostage.non-prod.pelo.tech
+- op: replace
+  path: /spec/tls/0/hosts/0
+  value: pelostage.non-prod.pelo.tech
