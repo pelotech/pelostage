@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonAnnotations:
+  owner: pelotech
+
+resources:
+  - ../../base
+
+generators:
+  - generators/secrets-generator.yaml
+
+namespace: backstage
