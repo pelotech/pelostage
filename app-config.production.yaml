@@ -17,6 +17,7 @@ backend:
     host: 0.0.0.0
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  experimentalExtraAllowedOrigins: "*"
   environment: production
   providers:
     github:
