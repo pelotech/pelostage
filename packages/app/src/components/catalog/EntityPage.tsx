@@ -219,6 +219,9 @@ const defaultEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+      <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+          <EntityKubernetesContent refreshIntervalMs={30000} />
+      </EntityLayout.Route>
   </EntityLayout>
 );
 
@@ -268,6 +271,9 @@ const apiPage = (
         </Grid>
       </Grid>
     </EntityLayout.Route>
+      <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+          <EntityKubernetesContent refreshIntervalMs={30000} />
+      </EntityLayout.Route>
   </EntityLayout>
 );
 
@@ -350,6 +356,9 @@ const systemPage = (
         unidirectional={false}
       />
     </EntityLayout.Route>
+      <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+          <EntityKubernetesContent refreshIntervalMs={30000} />
+      </EntityLayout.Route>
   </EntityLayout>
 );
 
@@ -369,6 +378,9 @@ const domainPage = (
         </Grid>
       </Grid>
     </EntityLayout.Route>
+      <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+          <EntityKubernetesContent refreshIntervalMs={30000} />
+      </EntityLayout.Route>
   </EntityLayout>
 );
 
