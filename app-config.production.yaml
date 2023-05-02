@@ -1,0 +1,4 @@
+app:
+  baseUrl: ${BASE_URL}
+backend:
+  baseUrl: ${BASE_URL}
