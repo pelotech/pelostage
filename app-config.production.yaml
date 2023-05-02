@@ -1,4 +1,5 @@
 app:
+  title: ${ORG_NAME}
   baseUrl: ${BASE_URL}
 backend:
   baseUrl: ${BASE_URL}

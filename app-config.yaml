@@ -1,5 +1,5 @@
 app:
-  title: ${ORG_NAME}
+  title: sample-app
   baseUrl: https://backstage.host
 
 organization:
