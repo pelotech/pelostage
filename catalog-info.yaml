@@ -7,6 +7,7 @@ metadata:
   annotations:
     github.com/project-slug: pelotech/pelostage
     backstage.io/techdocs-ref: dir:.
+    'backstage.io/kubernetes-id': pelostage
 spec:
   type: website
   owner: leads

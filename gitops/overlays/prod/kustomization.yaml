@@ -4,6 +4,9 @@ kind: Kustomization
 commonAnnotations:
   owner: pelotech
 
+commonLabels:
+  backstage.io/kubernetes-id: pelostage
+
 resources:
   - ../../base
   - config-map.yaml
