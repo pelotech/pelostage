@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: pelostage.non-prod.pelo.tech
+    - host: backstage.host
       http:
         paths:
           - backend:
@@ -21,7 +21,7 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - pelostage.non-prod.pelo.tech
+        - backstage.host
       secretName: pelostage-secret
 
 ---
@@ -62,10 +62,6 @@ spec:
             - name: http
               containerPort: 7007
           env:
-            - name: NODE_ENV
-              value: development
-            - name: CLUSTER_URL
-              value: http://kubernetes.default.svc
             - name: K8S_TOKEN
               valueFrom:
                 secretKeyRef:
@@ -73,6 +69,8 @@ spec:
                   key: token
           envFrom:
             - secretRef:
+                name: backstage
+            - configMapRef:
                 name: backstage
 # Uncomment if health checks are enabled in your app:
 # https://backstage.io/docs/plugins/observability#health-checks

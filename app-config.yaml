@@ -1,9 +1,9 @@
 app:
-  title: Pelotech backstage
-  baseUrl: https://pelostage.pelo.tech
+  title: ${ORG_NAME}
+  baseUrl: ${BASE_URL}
 
 organization:
-  name: PeloTech
+  name: ${ORG_NAME}
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -12,18 +12,18 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: http://localhost:7007
+  baseUrl: ${BASE_URL}
   listen:
     port: 7007
     # Uncomment the following host directive to bind to all IPv4 interfaces and
     # not just the baseUrl hostname.
-    # host: 0.0.0.0
+    host: 0.0.0.0
   csp:
     connect-src: ["'self'", 'http:', 'https:']
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
-    origin: "*"
+    origin: ${BASE_URL}
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
   # This is for local development only, it is not recommended to use this in production
@@ -64,13 +64,11 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  environment: development
+  environment: production
   providers:
     github:
-      development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
       production:
+        callbackUrl: ${BASE_URL}/api/auth/github/handler/frame
         clientId: ${AUTH_GITHUB_CLIENT_ID}
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
 
@@ -86,7 +84,7 @@ catalog:
   providers:
     github:
       providerId:
-        organization: 'pelotech' # string
+        organization: ${GITHUB_ORG} # string
         catalogPath: '/catalog-info.yaml' # string
         filters:
           branch: 'main' # string

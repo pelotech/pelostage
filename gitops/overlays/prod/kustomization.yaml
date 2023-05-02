@@ -6,16 +6,13 @@ commonAnnotations:
 
 resources:
   - ../../base
+  - config-map.yaml
 
 patches:
   - target:
       kind: Ingress
       name: pelostage-ingress
     path: ingress-patch.yaml
-  - target:
-      kind: Deployment
-      name: backstage
-    path: deployment-patch.yaml
 
 
 generators:
