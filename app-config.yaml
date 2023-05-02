@@ -106,6 +106,6 @@ kubernetes:
           name: backstage
           authProvider: 'serviceAccount'
           skipTLSVerify: true
-          skipMetricsLookup: true
+          skipMetricsLookup: false
           serviceAccountToken: ${K8S_TOKEN}
 
