@@ -53,6 +53,7 @@ spec:
       labels:
         app: backstage
     spec:
+      serviceAccountName: backstage
       containers:
         - name: backstage
           image: ghcr.io/pelotech/pelostage:latest
@@ -63,6 +64,11 @@ spec:
           env:
             - name: NODE_ENV
               value: development
+            - name: K8S_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: backstage
+                  key: token
           envFrom:
             - secretRef:
                 name: backstage
@@ -76,3 +82,67 @@ spec:
 #            httpGet:
 #              port: 7007
 #              path: /healthcheck
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: backstage-read-only
+rules:
+  - apiGroups:
+      - '*'
+    resources:
+      - pods
+      - configmaps
+      - services
+      - deployments
+      - replicasets
+      - horizontalpodautoscalers
+      - ingresses
+      - statefulsets
+      - limitranges
+      - daemonsets
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - batch
+    resources:
+      - jobs
+      - cronjobs
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - metrics.k8s.io
+    resources:
+      - pods
+    verbs:
+      - get
+      - list
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backstage
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: backstage
+subjects:
+  - kind: ServiceAccount
+    name: backstage
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: backstage-read-only
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backstage
+  annotations:
+    kubernetes.io/service-account.name: backstage
+type: kubernetes.io/service-account-token
