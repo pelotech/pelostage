@@ -106,4 +106,14 @@ kubernetes:
           skipTLSVerify: true
           skipMetricsLookup: false
           serviceAccountToken: ${K8S_TOKEN}
+          customResources:
+            - group: 'argoproj.io'
+              apiVersion: 'v1alpha1'
+              plural: 'rollouts'
+            - group: 'argoproj.io'
+              apiVersion: 'v1alpha1'
+              plural: 'applications'
+            - group: 'argoproj.io'
+              apiVersion: 'v1alpha1'
+              plural: 'appprojects'
 
