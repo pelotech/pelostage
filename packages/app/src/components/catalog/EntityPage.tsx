@@ -215,6 +215,9 @@ const defaultEntityPage = (
     <EntityLayout.Route path="/" title="Overview">
       {overviewContent}
     </EntityLayout.Route>
+      <EntityLayout.Route path="/ci-cd" title="CI/CD">
+          {cicdContent}
+      </EntityLayout.Route>
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
@@ -271,9 +274,6 @@ const apiPage = (
         </Grid>
       </Grid>
     </EntityLayout.Route>
-      <EntityLayout.Route path="/kubernetes" title="Kubernetes">
-          <EntityKubernetesContent refreshIntervalMs={30000} />
-      </EntityLayout.Route>
   </EntityLayout>
 );
 
