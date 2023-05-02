@@ -5,7 +5,7 @@ metadata:
   description: The pelotech backstage application repo
   # Example for optional annotations
   annotations:
-    github.com/project-slug: <github-org>/<github-repo>
+    github.com/project-slug: pelotech/pelostage
     backstage.io/techdocs-ref: dir:.
 spec:
   type: website
