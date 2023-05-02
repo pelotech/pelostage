@@ -64,6 +64,8 @@ spec:
           env:
             - name: NODE_ENV
               value: development
+            - name: CLUSTER_URL
+              value: http://kubernetes.default.svc
             - name: K8S_TOKEN
               valueFrom:
                 secretKeyRef:

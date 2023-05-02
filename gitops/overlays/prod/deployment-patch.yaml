@@ -1,3 +1,6 @@
 - op: replace
   path: /spec/template/spec/containers/0/env/0/value
   value: production
+- op: replace
+  path: /spec/template/spec/containers/0/env/1/value
+  value: https://21C54D7A3BE4262F161C08B47337D65B.gr7.us-west-2.eks.amazonaws.com

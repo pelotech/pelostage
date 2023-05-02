@@ -102,7 +102,7 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'config'
       clusters:
-        - url: http://kubernetes.default.svc
+        - url: ${CLUSTER_URL}
           name: backstage
           authProvider: 'serviceAccount'
           skipTLSVerify: true
