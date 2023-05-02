@@ -67,7 +67,7 @@ spec:
             - name: K8S_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: backstage
+                  name: backstage-sa
                   key: token
           envFrom:
             - secretRef:
@@ -142,7 +142,7 @@ roleRef:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: backstage
+  name: backstage-sa
   annotations:
     kubernetes.io/service-account.name: backstage
 type: kubernetes.io/service-account-token
