@@ -1,6 +1,6 @@
 app:
   title: ${ORG_NAME}
-  baseUrl: test
+  baseUrl: https://backstage.host
 
 organization:
   name: ${ORG_NAME}
@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: test
+  baseUrl: https://backstage.host
   listen:
     port: 7007
     # Uncomment the following host directive to bind to all IPv4 interfaces and
