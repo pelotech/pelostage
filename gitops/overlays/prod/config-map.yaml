@@ -4,7 +4,7 @@ metadata:
   name: backstage
 data:
   NODE_ENV: "production"
-  CLUSTER_URL: "https://89844889B776A990C4980C5C8770F96D.gr7.us-west-2.eks.amazonaws.com"
+  CLUSTER_URL: "http://kubernetes.default.svc"
   ORG_NAME: "Pelotech"
   BASE_URL: "https://pelostage.pelo.tech"
   GITHUB_ORG: "pelotech"

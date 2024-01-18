@@ -1,23 +1,22 @@
 app:
-  title: sample-app
-  baseUrl: https://backstage.host
+  title: ${ORG_NAME}
+  baseUrl: ${BASE_URL}
 
 organization:
   name: ${ORG_NAME}
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
-  # See https://backstage.io/docs/tutorials/backend-to-backend-auth for
+  # See https://backstage.io/docs/auth/service-to-service-auth for
   # information on the format
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: https://backstage.host
+  baseUrl: ${BASE_URL}
   listen:
     port: 7007
-    # Uncomment the following host directive to bind to all IPv4 interfaces and
-    # not just the baseUrl hostname.
-    host: 0.0.0.0
+    # Uncomment the following host directive to bind to specific interfaces
+    # host: 127.0.0.1
   csp:
     connect-src: ["'self'", 'http:', 'https:']
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
@@ -47,9 +46,12 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
-  '/test':
-    target: 'https://example.com'
-    changeOrigin: true
+  ### Example for how to add a proxy endpoint for the frontend.
+  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
+#   endpoints:
+#     '/test':
+#       target: 'https://example.com'
+#       changeOrigin: true
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -83,17 +85,30 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   providers:
     github:
-      providerId:
+      default:
         organization: ${GITHUB_ORG} # string
-        catalogPath: '/catalog-info.yaml' # string
-        filters:
-          branch: 'main' # string
-          repository: '.*' # Regex
         schedule: # optional; same options as in TaskScheduleDefinition
           # supports cron, ISO duration, "human duration" as used in code
           frequency: { minutes: 30 }
           # supports ISO duration, "human duration" as used in code
           timeout: { minutes: 3 }
+  locations: []
+#    # Local example data, file locations are relative to the backend process, typically `packages/backend`
+#    - type: file
+#      target: ../../examples/entities.yaml
+#
+#    # Local example template
+#    - type: file
+#      target: ../../examples/template/template.yaml
+#      rules:
+#        - allow: [Template]
+#
+#    # Local example organizational data
+#    - type: file
+#      target: ../../examples/org.yaml
+#      rules:
+#        - allow: [User, Group]
+
 kubernetes:
   serviceLocatorMethod:
     type: 'multiTenant'
@@ -101,9 +116,8 @@ kubernetes:
     - type: 'config'
       clusters:
         - url: ${CLUSTER_URL}
-          name: backstage
+          name: core-prod
           authProvider: 'serviceAccount'
-          skipTLSVerify: true
           skipMetricsLookup: false
           serviceAccountToken: ${K8S_TOKEN}
           customResources:
