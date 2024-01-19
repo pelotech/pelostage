@@ -1,6 +1,6 @@
 import { CatalogBuilder } from '@backstage/plugin-catalog-backend';
 import { GithubEntityProvider } from '@backstage/plugin-catalog-backend-module-github';
-import { GithubOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-github';
+import { GithubMultiOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-github';
 import { ScaffolderEntitiesProcessor } from '@backstage/plugin-catalog-backend-module-scaffolder-entity-model';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
@@ -20,9 +20,9 @@ export default async function createPlugin(
       }),
   );
   builder.addEntityProvider(
-      GithubOrgEntityProvider.fromConfig(env.config, {
+      GithubMultiOrgEntityProvider.fromConfig(env.config, {
           id: 'default',
-          orgUrl: 'https://github.com/pelotech',
+          githubUrl: 'https://github.com',
           logger: env.logger,
           schedule: env.scheduler.createScheduledTaskRunner({
               frequency: { minutes: 60 },
