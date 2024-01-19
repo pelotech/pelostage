@@ -2,7 +2,7 @@ name: Publish Docker image
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
     tags: [ 'v*' ]
     paths-ignore:
       - 'README.md'
@@ -25,9 +25,9 @@ jobs:
       - name: Set Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: yarn
-        run: yarn install --frozen-lockfile && yarn tsc && yarn build
+        run: yarn install --frozen-lockfile && yarn tsc && yarn build:all
         shell: bash
       - name: Log in to the Container registry
         uses: docker/login-action@v2

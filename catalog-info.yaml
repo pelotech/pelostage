@@ -10,5 +10,5 @@ metadata:
     'backstage.io/kubernetes-id': pelostage
 spec:
   type: website
-  owner: leads
+  owner: goup:pelotech/leads
   lifecycle: production

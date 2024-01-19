@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: backstage
 data:
-  NODE_ENV: "production"
-  CLUSTER_URL: "http://kubernetes.default.svc"
   ORG_NAME: "Pelotech"
   BASE_URL: "https://pelostage.pelo.tech"
   GITHUB_ORG: "pelotech"
