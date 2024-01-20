@@ -123,7 +123,7 @@ kubernetes:
           name: core-prod
           authProvider: 'serviceAccount'
           skipMetricsLookup: false
-          skipTLSVerify: false
+          skipTLSVerify: true
           serviceAccountToken: ${K8S_TOKEN}
           customResources:
             - group: 'argoproj.io'
