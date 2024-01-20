@@ -102,6 +102,10 @@ rules:
       - statefulsets
       - limitranges
       - daemonsets
+      - rollouts
+      - applications
+      - appprojects
+      - resourcequotas
     verbs:
       - get
       - list
