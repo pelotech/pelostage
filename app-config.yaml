@@ -1,9 +1,9 @@
 app:
-  title: ${ORG_NAME}
-  baseUrl: ${BASE_URL}
+  title: default title
+  baseUrl: http://localhost:3000
 
 organization:
-  name: ${ORG_NAME}
+  name: default org name
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -12,7 +12,7 @@ backend:
   # auth:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
-  baseUrl: ${BASE_URL}
+  baseUrl: http://localhost:7007
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -65,7 +65,7 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'local' # Alternatives - 'local'
+    runIn: 'docker' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
@@ -119,7 +119,7 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'config'
       clusters:
-        - url: ${CLUSTER_URL}
+        - url: "http://kubernetes.default.svc"
           name: core-prod
           authProvider: 'serviceAccount'
           skipMetricsLookup: false
