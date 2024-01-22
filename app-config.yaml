@@ -121,7 +121,7 @@ kubernetes:
     - type: 'config'
       clusters:
         - url: "https://kubernetes.default.svc"
-          name: core-prod
+          name: ${K8S_CLUSTER_NAME}
           authProvider: 'serviceAccount'
           skipMetricsLookup: false
           skipTLSVerify: true
