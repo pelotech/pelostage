@@ -31,7 +31,6 @@ jobs:
           cacheFrom: ghcr.io/example/example-devcontainer
           push: never
           runCmd: |
-            yarn install --frozen-lockfile
             yarn tsc
             yarn build:all
 
