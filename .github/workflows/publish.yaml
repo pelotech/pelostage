@@ -22,13 +22,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Set Node.js
-        uses: actions/setup-node@v3
+      - name: Run make ci-build in dev container
+        uses: devcontainers/ci@v0.3
         with:
-          node-version: 18.x
-      - name: yarn
-        run: yarn install --frozen-lockfile && yarn tsc && yarn build:all
-        shell: bash
+          # [Optional] If you have a separate workflow like the one above
+          # to pre-build your container image, you can reference it here
+          # to speed up your application build workflows as well!
+          cacheFrom: ghcr.io/example/example-devcontainer
+          push: never
+          runCmd: |
+            yarn install --frozen-lockfile
+            yarn tsc
+            yarn build:all
+
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
