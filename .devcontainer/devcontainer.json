@@ -10,13 +10,17 @@
    "features": {
      "ghcr.io/devcontainers-contrib/features/sops:1": {}
    },
-  mounts: [],
+//  "mounts": [
+//    "source=${env:HOME}/.gnupg,target=/root/.gnupg"
+//  ],
 
   // Configure tool-specific properties.
   "customizations": {
+    "settings": {
+      "remote.containers.copyGitConfig": true
+    },
     // Configure properties specific to VS Code.
     "vscode": {
-      "settings": {},
       "extensions": [
         "streetsidesoftware.code-spell-checker"
       ]
