@@ -44,7 +44,7 @@
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sops -d github-app-pelostage-local-credentials.enc.yaml > github-app-pelostage-local-credentials.yaml && cp app-config.local-example.yaml app-config.local.yaml && yarn install --frozen-lockfile",
+  "postCreateCommand": "yarn install --frozen-lockfile",
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"

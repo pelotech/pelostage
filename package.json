@@ -6,6 +6,7 @@
     "node": "18 || 20"
   },
   "scripts": {
+    "setup": "sops -d github-app-pelostage-local-credentials.enc.yaml > github-app-pelostage-local-credentials.yaml && cp app-config.local-example.yaml app-config.local.yaml",
     "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",

@@ -12,4 +12,6 @@ yarn dev
 
 ## Development (devContainer)
 
-
+1. start devContainer
+2. `yarn setup`
+3. `yarn dev`
