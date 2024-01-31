@@ -1,0 +1,36 @@
+# Rename to app-config.local-example.yaml
+app:
+  title: Pelostage local
+organization:
+  name: pelotech
+
+auth:
+  # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: production
+  providers:
+    github:
+      production:
+        $include: github-app-pelostage-local-credentials.yaml
+
+
+integrations:
+  github:
+    - host: github.com
+      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
+      apps:
+        - $include: github-app-pelostage-local-credentials.yaml
+catalog:
+  providers:
+    github:
+      default:
+        organization: pelotech
+
+
+kubernetes:
+  serviceLocatorMethod:
+    type: 'multiTenant'
+  clusterLocatorMethods:
+    - type: 'localKubectlProxy'
+      name: 'proxy'
+

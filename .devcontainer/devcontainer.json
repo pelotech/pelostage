@@ -7,7 +7,10 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20-bullseye",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+   "features": {
+     "ghcr.io/devcontainers-contrib/features/sops:1": {}
+   },
+  mounts: [],
 
   // Configure tool-specific properties.
   "customizations": {
