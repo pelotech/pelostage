@@ -1,9 +1,9 @@
 creation_rules:
-  - pgp: >-
-      B423561C6C8CD52ECC25B38F308D9EB05DE87828,
-      C4DF834A8627A6DCC0F0D94F8481F3143070234D,
-      A86483E5975AB10CB83CB9524391E44ED5D6BB46
+  age: >-
+    age1k2f0a7zedvprs9yr4wgeh5gsvx5rus4k8nyqgt5zgnmrywke5v0qjsr9zd,
+    age1l3t0mqs7ne26fkpc685axq2f2uvmejlpraq2mqc4z4ucu9cayyzq624737,
+    age1v2v40v65vf538nvzfge3gkcw9w30sxmep5ar047clu6msa5fduwq46j9ja
 
-# B423561C6C8CD52ECC25B38F308D9EB05DE87828: Emmanuel Gomez
-# C4DF834A8627A6DCC0F0D94F8481F3143070234D: Damien Chomat
-# A86483E5975AB10CB83CB9524391E44ED5D6BB46: Joachim Hill-Grannec
+# age1k2f0a7zedvprs9yr4wgeh5gsvx5rus4k8nyqgt5zgnmrywke5v0qjsr9zd: Joachim Hill-Grannec
+# age1l3t0mqs7ne26fkpc685axq2f2uvmejlpraq2mqc4z4ucu9cayyzq624737: Emmanuel Gomez
+# age1v2v40v65vf538nvzfge3gkcw9w30sxmep5ar047clu6msa5fduwq46j9ja: Damien Chomat
