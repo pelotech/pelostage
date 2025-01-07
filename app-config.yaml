@@ -74,10 +74,16 @@ auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: production
   providers:
+#    guest: {}
     github:
       production:
         clientId: ${CLIENT_ID}
         clientSecret: ${CLIENT_SECRET}
+        signIn:
+          resolvers:
+            # Matches the GitHub username with the Backstage user entity name.
+            # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
+            - resolver: usernameMatchingUserEntityName
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -90,13 +96,21 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   providers:
     github:
-      default:
+      production:
         organization: ${GITHUB_ORG} # string
-        schedule: # optional; same options as in TaskScheduleDefinition
+        schedule: # same options as in SchedulerServiceTaskScheduleDefinition
           # supports cron, ISO duration, "human duration" as used in code
           frequency: { minutes: 30 }
           # supports ISO duration, "human duration" as used in code
           timeout: { minutes: 3 }
+    githubOrg:
+      id: production
+      githubUrl: https://github.com/${GITHUB_ORG}
+      schedule: # optional; same options as in TaskScheduleDefinition
+        # supports cron, ISO duration, "human duration" as used in code
+        frequency: { minutes: 30 }
+        # supports ISO duration, "human duration" as used in code
+        timeout: { minutes: 3 }
   locations: []
 #    # Local example data, file locations are relative to the backend process, typically `packages/backend`
 #    - type: file
@@ -123,7 +137,6 @@ kubernetes:
         - url: "https://kubernetes.default.svc"
           name: ${K8S_CLUSTER_NAME}
           authProvider: 'serviceAccount'
-          skipMetricsLookup: false
           skipTLSVerify: true
           serviceAccountToken: ${K8S_TOKEN}
           customResources:

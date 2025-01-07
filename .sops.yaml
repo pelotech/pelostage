@@ -1,8 +1,8 @@
 creation_rules:
-  age: >-
-    age1k2f0a7zedvprs9yr4wgeh5gsvx5rus4k8nyqgt5zgnmrywke5v0qjsr9zd,
-    age1l3t0mqs7ne26fkpc685axq2f2uvmejlpraq2mqc4z4ucu9cayyzq624737,
-    age1v2v40v65vf538nvzfge3gkcw9w30sxmep5ar047clu6msa5fduwq46j9ja
+  - age: >-
+      age1k2f0a7zedvprs9yr4wgeh5gsvx5rus4k8nyqgt5zgnmrywke5v0qjsr9zd,
+      age1l3t0mqs7ne26fkpc685axq2f2uvmejlpraq2mqc4z4ucu9cayyzq624737,
+      age1v2v40v65vf538nvzfge3gkcw9w30sxmep5ar047clu6msa5fduwq46j9ja
 
 # age1k2f0a7zedvprs9yr4wgeh5gsvx5rus4k8nyqgt5zgnmrywke5v0qjsr9zd: Joachim Hill-Grannec
 # age1l3t0mqs7ne26fkpc685axq2f2uvmejlpraq2mqc4z4ucu9cayyzq624737: Emmanuel Gomez

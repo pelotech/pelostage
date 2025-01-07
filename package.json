@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "18 || 20"
+    "node": "20 || 22"
   },
   "scripts": {
-    "setup": "sops -d github-app-pelostage-local-credentials.enc.yaml > github-app-pelostage-local-credentials.yaml && cp app-config.local-example.yaml app-config.local.yaml",
-    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
+    "dev": "yarn workspaces foreach -A --include backend --include app --parallel -v -i run start",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
     "build:backend": "yarn workspace backend build",
@@ -32,21 +31,18 @@
     ]
   },
   "devDependencies": {
-    "@backstage/cli": "^0.26.10",
+    "@backstage/cli": "^0.29.4",
     "@backstage/e2e-test-utils": "^0.1.1",
     "@playwright/test": "^1.32.3",
-    "@spotify/prettier-config": "^12.0.0",
-    "concurrently": "^8.0.0",
-    "lerna": "^7.3.0",
-    "node-gyp": "^9.0.0",
+    "node-gyp": "^10.0.0",
     "prettier": "^2.3.2",
-    "typescript": "~5.2.0"
+    "typescript": "~5.4.0"
   },
   "resolutions": {
     "@types/react": "^18",
     "@types/react-dom": "^18"
   },
-  "prettier": "@spotify/prettier-config",
+  "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": [
       "eslint --fix",
@@ -55,5 +51,6 @@
     "*.{json,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.4.1"
 }
