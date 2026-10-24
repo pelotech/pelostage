@@ -87,9 +87,9 @@ encrypted with helm-secrets), database and any extra Backstage config
 
 The database is in-memory SQLite by default, so the catalog, user settings
 (home page layout, starred entities, theme), notifications and scorecards are
-lost on every restart. For anything beyond a trial set `database.type: postgres`
-with either `cluster.enabled: true` (a CloudNativePG cluster; needs the CNPG
-operator) or an external Postgres.
+lost on every restart. For anything beyond a trial set either
+`cnpgCluster.enabled: true` (a CloudNativePG cluster; needs the CNPG operator)
+or `database.external.host` (an existing Postgres).
 
 ## GitHub and scorecards on entity pages
 
