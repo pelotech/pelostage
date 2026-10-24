@@ -50,6 +50,12 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
 
+// tech insights scorecards; fact retrievers and checks are configured in app-config.yaml
+backend.add(import('@backstage-community/plugin-tech-insights-backend'));
+backend.add(
+  import('@backstage-community/plugin-tech-insights-backend-module-jsonfc'),
+);
+
 // user settings (home page layout, starred entities, theme)
 backend.add(import('@backstage/plugin-user-settings-backend'));
 

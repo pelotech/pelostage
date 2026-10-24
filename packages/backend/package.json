@@ -16,6 +16,8 @@
     "build-image": "docker build ../.. -f Dockerfile --tag backstage"
   },
   "dependencies": {
+    "@backstage-community/plugin-tech-insights-backend": "^3.1.0",
+    "@backstage-community/plugin-tech-insights-backend-module-jsonfc": "^0.10.0",
     "@backstage/backend-defaults": "^0.18.1",
     "@backstage/plugin-app-backend": "^0.5.19",
     "@backstage/plugin-auth-backend": "^0.30.2",
