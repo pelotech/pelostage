@@ -76,17 +76,20 @@ CI runs `prek` on every pull request, and PR titles must be
 - [release-please](https://github.com/googleapis/release-please) keeps a release
   PR open; merging it tags `vX.Y.Z`, updates `CHANGELOG.md` and pushes the image
   with that tag.
-- Production runs on the `core-prod` cluster. The `backstage` Argo CD application
-  (defined in `pelotech/infrastructure`) syncs `gitops/overlays/prod` from `main`,
-  and Argo CD Image Updater rolls out the newest image build.
-- Deployment secrets live in `gitops/overlays/*/generators/backstage.yaml`,
-  encrypted with sops and decrypted in-cluster by ksops. Edit them with
-  `sops gitops/overlays/prod/generators/backstage.yaml`.
-- The `dev` overlay is not deployed.
+### Deploying
 
-Production currently uses an in-memory SQLite database, so the catalog and
-search index are rebuilt from GitHub after every restart, and user settings
-(home page layout, starred entities, theme) and notifications are lost.
+Every installation (pelotech's and each client's) uses the helm chart
+[`oci://ghcr.io/pelotech/charts/pelostage`](https://github.com/pelotech/charts/tree/main/charts/pelostage)
+with its own values: portal title, URL and GitHub org, logo, home page links,
+ingress, the GitHub App secret (`secrets.existingSecret` or inline values, e.g.
+encrypted with helm-secrets), database and any extra Backstage config
+(`appConfig`). The chart README lists every value.
+
+The database is in-memory SQLite by default, so the catalog, user settings
+(home page layout, starred entities, theme), notifications and scorecards are
+lost on every restart. For anything beyond a trial set `database.type: postgres`
+with either `cluster.enabled: true` (a CloudNativePG cluster; needs the CNPG
+operator) or an external Postgres.
 
 ## GitHub and scorecards on entity pages
 
