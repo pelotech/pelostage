@@ -3,6 +3,10 @@ site_description: documentation for the pelotech backstage deployment
 nav:
   - Home: README.md
 
+# design specs and plans are for contributors, not the portal
+exclude_docs: |
+  superpowers/
+
 plugins:
   - techdocs-core
   - monorepo
