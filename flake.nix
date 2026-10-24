@@ -30,8 +30,8 @@
               with pkgs;
               [
                 # node (yarn delegates to the version pinned by yarnPath in .yarnrc.yml)
-                nodejs_22
-                (yarn-berry.override { nodejs = nodejs_22; })
+                nodejs_24
+                (yarn-berry.override { nodejs = nodejs_24; })
 
                 # sops
                 sops
