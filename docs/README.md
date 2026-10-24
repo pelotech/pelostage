@@ -86,6 +86,19 @@ Production currently uses an in-memory SQLite database, so the catalog and
 search index are rebuilt from GitHub after every restart, and user settings
 (home page layout, starred entities, theme) and notifications are lost.
 
+## GitHub and scorecards on entity pages
+
+- **GitHub insights and pull requests** show README, languages, releases,
+  contributors and open pull requests for any entity with a
+  `github.com/project-slug` annotation (repos found by GitHub discovery get it
+  automatically). They call GitHub as the signed-in user, limited to what the
+  GitHub App may read: it needs `Contents`, `Metadata` and `Pull requests`
+  read access (and `Actions` read for the GitHub Actions tab).
+- **Tech Insights** scores every entity against the checks under
+  `techInsights.factChecker.checks` in `app-config.yaml`: owned by a group,
+  has a description, has tags, has TechDocs. Facts are recomputed every 15
+  minutes, so after a restart the scorecards are empty until the next run.
+
 ## AI tools (MCP)
 
 Pelostage serves read-only catalog tools over MCP at
