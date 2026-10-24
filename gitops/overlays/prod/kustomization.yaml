@@ -4,8 +4,11 @@ kind: Kustomization
 commonAnnotations:
   owner: pelotech
 
-commonLabels:
-  backstage.io/kubernetes-id: pelostage
+# selectors keep the label: Deployment selectors are immutable
+labels:
+  - pairs:
+      backstage.io/kubernetes-id: pelostage
+    includeSelectors: true
 
 resources:
   - ../../base

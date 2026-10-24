@@ -54,6 +54,13 @@ spec:
         app: backstage
     spec:
       serviceAccountName: backstage
+      securityContext:
+        # the image's `node` user
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: backstage
           image: ghcr.io/pelotech/pelostage:latest
@@ -61,6 +68,10 @@ spec:
           ports:
             - name: http
               containerPort: 7007
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
           env:
             - name: K8S_TOKEN
               valueFrom:
@@ -72,16 +83,22 @@ spec:
                 name: backstage
             - configMapRef:
                 name: backstage
-# Uncomment if health checks are enabled in your app:
-# https://backstage.io/docs/plugins/observability#health-checks
-#          readinessProbe:
-#            httpGet:
-#              port: 7007
-#              path: /healthcheck
-#          livenessProbe:
-#            httpGet:
-#              port: 7007
-#              path: /healthcheck
+          # https://backstage.io/docs/backend-system/core-services/root-health
+          # allow up to 5 minutes for plugins to initialize before liveness applies
+          startupProbe:
+            httpGet:
+              port: http
+              path: /.backstage/health/v1/liveness
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              port: http
+              path: /.backstage/health/v1/liveness
+          readinessProbe:
+            httpGet:
+              port: http
+              path: /.backstage/health/v1/readiness
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
