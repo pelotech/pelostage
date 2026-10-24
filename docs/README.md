@@ -38,6 +38,22 @@ cluster if you need it.
 | `app-config.production.yaml` | Production overrides, values come from the environment |
 | `github-app-pelostage-local-credentials.enc.yaml` | sops-encrypted GitHub App credentials for local dev |
 
+### Frontend layout
+
+The app uses the Backstage
+[new frontend system](https://backstage.io/docs/frontend-system/): every plugin
+listed in `packages/app/package.json` is installed automatically and brings its
+own pages, sidebar entries and entity page tabs and cards. Only pelostage
+specifics live in `packages/app/src/modules`:
+
+- `app`: the GitHub sign-in page and the sidebar.
+- `home`: the "Getting Started" home page card.
+
+The home page layout, toolkit links and other extension settings are in
+`app.extensions` in `app-config.yaml`. To add a plugin, add it to
+`packages/app/package.json`. The app visualizer (under Settings) shows every
+installed extension.
+
 ### Checks
 
 ```sh
@@ -67,7 +83,16 @@ CI runs `prek` on every pull request, and PR titles must be
 - The `dev` overlay is not deployed.
 
 Production currently uses an in-memory SQLite database, so the catalog and
-search index are rebuilt from GitHub after every restart.
+search index are rebuilt from GitHub after every restart, and user settings
+(home page layout, starred entities, theme) and notifications are lost.
+
+## AI tools (MCP)
+
+Pelostage serves read-only catalog tools over MCP at
+<https://pelostage.pelo.tech/api/mcp-actions/v1>. MCP clients sign in through
+the normal GitHub login. Only actions marked read-only are exposed (see
+`backend.actions` in `app-config.yaml`); permissions are disabled, so widen
+this only after enabling them.
 
 ## Dependencies
 

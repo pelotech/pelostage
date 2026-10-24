@@ -7,6 +7,9 @@ backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 backend.add(import('@backstage/plugin-proxy-backend'));
 backend.add(import('@backstage/plugin-scaffolder-backend'));
 backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
+backend.add(
+  import('@backstage/plugin-scaffolder-backend-module-notifications'),
+);
 backend.add(import('@backstage/plugin-techdocs-backend'));
 
 // auth plugin
@@ -46,5 +49,16 @@ backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // kubernetes
 backend.add(import('@backstage/plugin-kubernetes-backend'));
+
+// user settings (home page layout, starred entities, theme)
+backend.add(import('@backstage/plugin-user-settings-backend'));
+
+// notifications and signals
+backend.add(import('@backstage/plugin-notifications-backend'));
+backend.add(import('@backstage/plugin-signals-backend'));
+
+// mcp actions; exposed actions are limited in app-config.yaml
+// See https://backstage.io/docs/ai/mcp-actions
+backend.add(import('@backstage/plugin-mcp-actions-backend'));
 
 backend.start();

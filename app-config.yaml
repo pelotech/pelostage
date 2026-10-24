@@ -2,6 +2,63 @@ app:
   title: default title
   baseUrl: http://127.0.0.1:3000
 
+  # install every frontend plugin listed in packages/app/package.json
+  packages: all
+
+  extensions:
+    # record page visits for the recently/most visited widgets
+    # (stored with the user settings backend)
+    - api:home/visits: true
+    - app-root-element:home/visit-listener: true
+    - home-page-widget:home/toolkit:
+        config:
+          tools:
+            - url: https://github.com/pelotech
+              label: GitHub org
+              icon: github
+            - url: https://github.com/pelotech/pelostage
+              label: pelostage repo
+              icon: github
+            - url: https://backstage.io/docs
+              label: Backstage docs
+              icon: docs
+    # the home page is the landing page; users can rearrange this default layout
+    - page:home:
+        config:
+          path: /
+          defaultConfig:
+            - component: HomePageSearchBar
+              column: 0
+              row: 0
+              width: 12
+              height: 2
+              deletable: false
+            - component: GettingStarted
+              column: 0
+              row: 2
+              width: 4
+              height: 8
+            - component: HomePageStarredEntities
+              column: 4
+              row: 2
+              width: 4
+              height: 4
+            - component: HomePageToolkit
+              column: 8
+              row: 2
+              width: 4
+              height: 4
+            - component: HomePageRecentlyVisited
+              column: 4
+              row: 6
+              width: 4
+              height: 4
+            - component: HomePageMostVisited
+              column: 8
+              row: 6
+              width: 4
+              height: 4
+
 organization:
   name: default org name
 
@@ -26,6 +83,15 @@ backend:
     connection: ':memory:'
   cache:
     store: memory
+  # actions exposed to AI clients through the mcp-actions backend. Permissions are
+  # disabled, so anything here is open to every signed-in user: keep it read-only.
+  actions:
+    pluginSources:
+      - catalog
+    filter:
+      include:
+        - attributes:
+            readOnly: true
 
 integrations:
   github:
@@ -63,6 +129,14 @@ auth:
             # Matches the GitHub username with the Backstage user entity name.
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
             - resolver: usernameMatchingUserEntityName
+  # lets MCP clients sign in as the user through the normal GitHub login
+  # https://backstage.io/docs/ai/mcp-actions#client-id-metadata-documents
+  clientIdMetadataDocuments:
+    enabled: true
+    allowedRedirectUriPatterns:
+      - 'https://vscode.dev/*'
+      - 'http://localhost:*/*'
+      - 'http://127.0.0.1:*/*'
 
 catalog:
   import:
@@ -107,3 +181,9 @@ kubernetes:
             - group: 'argoproj.io'
               apiVersion: 'v1alpha1'
               plural: 'appprojects'
+
+# Read-only catalog tools for AI clients at /api/mcp-actions/v1
+# (exposed actions are filtered under backend.actions).
+# https://backstage.io/docs/ai/mcp-actions
+mcpActions:
+  name: pelostage
