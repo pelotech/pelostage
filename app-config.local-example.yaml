@@ -1,4 +1,4 @@
-# Rename to app-config.local-example.yaml
+# Copy to app-config.local.yaml
 app:
   title: Pelostage local
 organization:
@@ -10,21 +10,38 @@ auth:
   providers:
     github:
       production:
-        $include: github-app-pelostage-local-credentials.yaml
+        clientId:
+          $include: github-app-pelostage-local-credentials.yaml#clientId
+        clientSecret:
+          $include: github-app-pelostage-local-credentials.yaml#clientSecret
+        signIn:
+          $include: github-app-pelostage-local-credentials.yaml#signIn
 
 
 integrations:
   github:
     - host: github.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
       apps:
-        - $include: github-app-pelostage-local-credentials.yaml
+        - appId:
+            $include: github-app-pelostage-local-credentials.yaml#appId
+          clientId:
+            $include: github-app-pelostage-local-credentials.yaml#clientId
+          clientSecret:
+            $include: github-app-pelostage-local-credentials.yaml#clientSecret
+          webhookSecret:
+            $include: github-app-pelostage-local-credentials.yaml#webhookSecret
+          privateKey:
+            $include: github-app-pelostage-local-credentials.yaml#privateKey
+
+# override the org on the providers from app-config.yaml rather than adding new ones
 catalog:
   providers:
     github:
-      default:
+      production:
         organization: pelotech
+    githubOrg:
+      id: production
+      githubUrl: https://github.com/pelotech
 
 
 kubernetes:
@@ -32,4 +49,3 @@ kubernetes:
     type: 'multiTenant'
   clusterLocatorMethods:
     - type: 'localKubectlProxy'
-      name: 'proxy'

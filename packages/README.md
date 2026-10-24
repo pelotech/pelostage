@@ -1,9 +1,8 @@
 # The Packages Folder
 
-This is where your own applications and centrally managed libraries live, each
-in a separate folder of its own.
+- `app`: the Backstage frontend.
+- `backend`: the Backstage backend. Its Docker image also serves the built
+  frontend.
 
-From the start there's an `app` folder (for the frontend) and a `backend` folder
-(for the Node backend), but you can also add more modules in here that house
-your core additions and adaptations, such as themes, common React component
-libraries, utilities, and similar.
+Shared libraries such as themes or common React components would also live
+here, each in a folder of its own.
