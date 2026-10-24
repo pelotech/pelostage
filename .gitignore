@@ -54,3 +54,10 @@ site
 e2e-test-report/
 
 .idea
+
+# direnv
+.direnv
+
+# nix
+result
+result-*

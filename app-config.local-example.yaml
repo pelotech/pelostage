@@ -33,4 +33,3 @@ kubernetes:
   clusterLocatorMethods:
     - type: 'localKubectlProxy'
       name: 'proxy'
-
