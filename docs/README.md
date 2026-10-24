@@ -50,7 +50,9 @@ specifics live in `packages/app/src/modules`:
 - `home`: the "Getting Started" home page card.
 
 The home page layout, toolkit links and other extension settings are in
-`app.extensions` in `app-config.yaml`. To add a plugin, add it to
+`app.extensions` in `app-config.yaml`. Each deployment can set its own logo
+with `app.branding.logoFullUrl` and `app.branding.logoIconUrl` (any image URL);
+without them the built-in logo is shown. To add a plugin, add it to
 `packages/app/package.json`. The app visualizer (under Settings) shows every
 installed extension.
 
