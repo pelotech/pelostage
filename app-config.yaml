@@ -146,4 +146,3 @@ kubernetes:
             - group: 'argoproj.io'
               apiVersion: 'v1alpha1'
               plural: 'appprojects'
-
