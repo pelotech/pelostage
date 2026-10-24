@@ -10,12 +10,10 @@ app:
     # (stored with the user settings backend)
     - api:home/visits: true
     - app-root-element:home/visit-listener: true
+    # deployments add their own links (e.g. their GitHub org) through the helm chart
     - home-page-widget:home/toolkit:
         config:
           tools:
-            - url: https://github.com/pelotech
-              label: GitHub org
-              icon: github
             - url: https://github.com/pelotech/pelostage
               label: pelostage repo
               icon: github
