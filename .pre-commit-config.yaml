@@ -1,5 +1,5 @@
 # sops-encrypted files must not be reformatted
-exclude: ^(\.yarn/releases/|yarn\.lock$|.*\.enc\.yaml$|gitops/.*/generators/)
+exclude: ^(\.yarn/releases/|yarn\.lock$|.*\.enc\.yaml$)
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
