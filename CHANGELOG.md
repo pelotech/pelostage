@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/pelotech/pelostage/compare/v0.2.0...v0.2.1) (2026-10-25)
+
+
+### Chores
+
+* remove kustomize gitops manifests now that deploys use the helm chart ([#8](https://github.com/pelotech/pelostage/issues/8)) ([3137c3a](https://github.com/pelotech/pelostage/commit/3137c3a393b9029376889db244fb80def07211fd))
+
 ## [0.2.0](https://github.com/pelotech/pelostage/compare/v0.1.0...v0.2.0) (2026-10-24)
 
 
