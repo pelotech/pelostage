@@ -47,7 +47,7 @@
     "@roadiehq/backstage-plugin-github-pull-requests": "^3.9.1",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",
-    "react-router": "^6.30.2",
+    "react-router": "^7.0.0",
     "react-router-dom": "^6.30.2"
   },
   "devDependencies": {
