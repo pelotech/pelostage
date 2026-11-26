@@ -2497,7 +2497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/cli-defaults@npm:^0.1.7":
+"@backstage/cli-defaults@npm:0.1.7, @backstage/cli-defaults@npm:^0.1.7":
   version: 0.1.7
   resolution: "@backstage/cli-defaults@npm:0.1.7"
   dependencies:
@@ -2930,7 +2930,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/cli@npm:^0.36.7":
+"@backstage/cli@npm:0.36.7, @backstage/cli@npm:^0.36.7":
   version: 0.36.7
   resolution: "@backstage/cli@npm:0.36.7"
   dependencies:
@@ -3286,7 +3286,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@backstage/frontend-test-utils@npm:^0.6.5":
+"@backstage/frontend-test-utils@npm:0.6.5":
   version: 0.6.5
   resolution: "@backstage/frontend-test-utils@npm:0.6.5"
   dependencies:
@@ -6565,7 +6565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/environment-jsdom-abstract@npm:^30.5.0":
+"@jest/environment-jsdom-abstract@npm:30.5.2":
   version: 30.5.2
   resolution: "@jest/environment-jsdom-abstract@npm:30.5.2"
   dependencies:
@@ -12335,7 +12335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^10.0.0":
+"@testing-library/dom@npm:10.4.2, @testing-library/dom@npm:^10.0.0":
   version: 10.4.2
   resolution: "@testing-library/dom@npm:10.4.2"
   dependencies:
@@ -12351,7 +12351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.0.0":
+"@testing-library/jest-dom@npm:6.6.3":
   version: 6.6.3
   resolution: "@testing-library/jest-dom@npm:6.6.3"
   dependencies:
@@ -12366,7 +12366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:^16.0.0":
+"@testing-library/react@npm:16.1.0, @testing-library/react@npm:^16.0.0":
   version: 16.1.0
   resolution: "@testing-library/react@npm:16.1.0"
   dependencies:
@@ -12802,7 +12802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^30.0.0":
+"@types/jest@npm:30.0.0":
   version: 30.0.0
   resolution: "@types/jest@npm:30.0.0"
   dependencies:
@@ -14353,7 +14353,7 @@ __metadata:
     "@backstage/core-plugin-api": "npm:^1.12.11"
     "@backstage/frontend-defaults": "npm:^0.5.7"
     "@backstage/frontend-plugin-api": "npm:^0.18.2"
-    "@backstage/frontend-test-utils": "npm:^0.6.5"
+    "@backstage/frontend-test-utils": "npm:0.6.5"
     "@backstage/plugin-api-docs": "npm:^0.14.6"
     "@backstage/plugin-app-module-user-settings": "npm:^0.1.3"
     "@backstage/plugin-app-react": "npm:^0.2.8"
@@ -14378,9 +14378,9 @@ __metadata:
     "@material-ui/icons": "npm:^4.9.1"
     "@roadiehq/backstage-plugin-github-insights": "npm:^3.6.1"
     "@roadiehq/backstage-plugin-github-pull-requests": "npm:^3.9.1"
-    "@testing-library/dom": "npm:^10.0.0"
-    "@testing-library/jest-dom": "npm:^6.0.0"
-    "@testing-library/react": "npm:^16.0.0"
+    "@testing-library/dom": "npm:10.4.2"
+    "@testing-library/jest-dom": "npm:6.6.3"
+    "@testing-library/react": "npm:16.1.0"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:*"
     react: "npm:^18.0.2"
@@ -15006,7 +15006,7 @@ __metadata:
     "@backstage-community/plugin-tech-insights-backend": "npm:^3.1.0"
     "@backstage-community/plugin-tech-insights-backend-module-jsonfc": "npm:^0.10.0"
     "@backstage/backend-defaults": "npm:^0.18.1"
-    "@backstage/cli": "npm:^0.36.7"
+    "@backstage/cli": "npm:0.36.7"
     "@backstage/plugin-app-backend": "npm:^0.5.19"
     "@backstage/plugin-auth-backend": "npm:^0.30.2"
     "@backstage/plugin-auth-backend-module-github-provider": "npm:^0.5.8"
@@ -22965,7 +22965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^30.5.0":
+"jest@npm:30.5.2":
   version: 30.5.2
   resolution: "jest@npm:30.5.2"
   dependencies:
@@ -23128,6 +23128,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsdom@npm:27.4.0":
+  version: 27.4.0
+  resolution: "jsdom@npm:27.4.0"
+  dependencies:
+    "@acemir/cssom": "npm:^0.9.28"
+    "@asamuzakjp/dom-selector": "npm:^6.7.6"
+    "@exodus/bytes": "npm:^1.6.0"
+    cssstyle: "npm:^5.3.4"
+    data-urls: "npm:^6.0.0"
+    decimal.js: "npm:^10.6.0"
+    html-encoding-sniffer: "npm:^6.0.0"
+    http-proxy-agent: "npm:^7.0.2"
+    https-proxy-agent: "npm:^7.0.6"
+    is-potential-custom-element-name: "npm:^1.0.1"
+    parse5: "npm:^8.0.0"
+    saxes: "npm:^6.0.0"
+    symbol-tree: "npm:^3.2.4"
+    tough-cookie: "npm:^6.0.0"
+    w3c-xmlserializer: "npm:^5.0.0"
+    webidl-conversions: "npm:^8.0.0"
+    whatwg-mimetype: "npm:^4.0.0"
+    whatwg-url: "npm:^15.1.0"
+    ws: "npm:^8.18.3"
+    xml-name-validator: "npm:^5.0.0"
+  peerDependencies:
+    canvas: ^3.0.0
+  peerDependenciesMeta:
+    canvas:
+      optional: true
+  checksum: 10c0/291bb71a611dbaed81ce516587b71a5ffd9d43337d65bbd0731e7924cd7018f5871cf66614facadfd0dffec2b23a0fc57b2ee36b5a39e20f0f569e2949b3418c
+  languageName: node
+  linkType: hard
+
 "jsdom@npm:^25.0.1":
   version: 25.0.1
   resolution: "jsdom@npm:25.0.1"
@@ -23159,39 +23192,6 @@ __metadata:
     canvas:
       optional: true
   checksum: 10c0/6bda32a6dfe4e37a30568bf51136bdb3ba9c0b72aadd6356280404275a34c9e097c8c25b5eb3c742e602623741e172da977ff456684befd77c9042ed9bf8c2b4
-  languageName: node
-  linkType: hard
-
-"jsdom@npm:^27.1.0":
-  version: 27.4.0
-  resolution: "jsdom@npm:27.4.0"
-  dependencies:
-    "@acemir/cssom": "npm:^0.9.28"
-    "@asamuzakjp/dom-selector": "npm:^6.7.6"
-    "@exodus/bytes": "npm:^1.6.0"
-    cssstyle: "npm:^5.3.4"
-    data-urls: "npm:^6.0.0"
-    decimal.js: "npm:^10.6.0"
-    html-encoding-sniffer: "npm:^6.0.0"
-    http-proxy-agent: "npm:^7.0.2"
-    https-proxy-agent: "npm:^7.0.6"
-    is-potential-custom-element-name: "npm:^1.0.1"
-    parse5: "npm:^8.0.0"
-    saxes: "npm:^6.0.0"
-    symbol-tree: "npm:^3.2.4"
-    tough-cookie: "npm:^6.0.0"
-    w3c-xmlserializer: "npm:^5.0.0"
-    webidl-conversions: "npm:^8.0.0"
-    whatwg-mimetype: "npm:^4.0.0"
-    whatwg-url: "npm:^15.1.0"
-    ws: "npm:^8.18.3"
-    xml-name-validator: "npm:^5.0.0"
-  peerDependencies:
-    canvas: ^3.0.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 10c0/291bb71a611dbaed81ce516587b71a5ffd9d43337d65bbd0731e7924cd7018f5871cf66614facadfd0dffec2b23a0fc57b2ee36b5a39e20f0f569e2949b3418c
   languageName: node
   linkType: hard
 
@@ -25969,7 +25969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:^10.0.0":
+"node-gyp@npm:10.3.1":
   version: 10.3.1
   resolution: "node-gyp@npm:10.3.1"
   dependencies:
@@ -27888,7 +27888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.3.2":
+"prettier@npm:2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -29981,15 +29981,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@backstage/cli": "npm:^0.36.7"
-    "@backstage/cli-defaults": "npm:^0.1.7"
-    "@jest/environment-jsdom-abstract": "npm:^30.5.0"
-    "@types/jest": "npm:^30.0.0"
-    jest: "npm:^30.5.0"
-    jsdom: "npm:^27.1.0"
-    node-gyp: "npm:^10.0.0"
-    prettier: "npm:^2.3.2"
-    typescript: "npm:~5.8.0"
+    "@backstage/cli": "npm:0.36.7"
+    "@backstage/cli-defaults": "npm:0.1.7"
+    "@jest/environment-jsdom-abstract": "npm:30.5.2"
+    "@types/jest": "npm:30.0.0"
+    jest: "npm:30.5.2"
+    jsdom: "npm:27.4.0"
+    node-gyp: "npm:10.3.1"
+    prettier: "npm:2.8.8"
+    typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -32624,6 +32624,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^5.9.3":
   version: 5.9.3
   resolution: "typescript@npm:5.9.3"
@@ -32634,13 +32644,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:~5.8.0":
+"typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>":
   version: 5.8.3
-  resolution: "typescript@npm:5.8.3"
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
+  checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
   languageName: node
   linkType: hard
 
@@ -32651,16 +32661,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/ad09fdf7a756814dce65bc60c1657b40d44451346858eea230e10f2e95a289d9183b6e32e5c11e95acc0ccc214b4f36289dcad4bf1886b0adb84d711d336a430
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A~5.8.0#optional!builtin<compat/typescript>":
-  version: 5.8.3
-  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
   languageName: node
   linkType: hard
 
